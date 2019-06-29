@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="container__navbar">
+    <app-navbar></app-navbar>
+  </div>
+
+  <div class="container__cards-list">
+    <div class="cards">
+      <!-- <perfect-scrollbar [config]="config"> -->
+      <ul class="cards__list">
+        <li *ngFor="let card of cards" class="cards__item" [ngClass]="{'active': SelectedOption == card, '': SelectedOption != card}">
+          <p>{{card.name}}</p>
+          <button class="btn" (click)="onSelectCard(card.name)">{{card.type}}</button>
+          <!-- <button class="btn" (click)="goToCardDetails(card.name)">{{card.type}}</button> -->
+        </li>
+      </ul>
+      <!-- </perfect-scrollbar> -->
+    </div>
+  </div>
+
+  <div class="container__card-details">
+    <app-card-item></app-card-item>
+  
+    <!-- <app-card-item *ngIf="selectedCard; else infoText"></app-card-item>
+    <ng-template #infoText>
+      <p>Please select a card</p>
+    </ng-template> -->
+  </div>
+
+
+</div>

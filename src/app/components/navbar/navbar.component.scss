@@ -1,0 +1,17 @@
+.navbar {
+  height: 8rem;
+  width: 100vw;
+  z-index: 1000;
+  position: fixed;
+  padding: 1rem .5rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
+
+  &__logo {
+    padding: 0 .5rem;
+    width: 25rem;
+    height: 6rem;
+    cursor: pointer;
+  }
+}

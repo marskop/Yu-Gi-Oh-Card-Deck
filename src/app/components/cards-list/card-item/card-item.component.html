@@ -1,0 +1,68 @@
+<div *ngIf="loadingData" class="spinner-container">
+  <div class="spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+<div *ngIf="dataReady" class="card">
+
+  <div class="card__img">
+    <img [src]="'http://yugiohprices.com/api/card_image/' + cardDetails.data.name">
+  </div>
+
+
+  <div class="card__info">
+    <h3 class="card__title">{{cardDetails.data.name}}</h3>
+    <p *ngIf="cardDetails.data.name == null">N/A</p>
+
+    <ul class="card__details">
+
+      <li class="card__detail">
+        <h5>Card Type:</h5>
+        <p>{{cardDetails.data.card_type}}</p>
+        <p *ngIf="cardDetails.data.card_type == null">N/A</p>
+      </li>
+      <li class="card__detail">
+        <h5>Type:</h5>
+        <p>{{cardDetails.data.type}}</p>
+        <p *ngIf="cardDetails.data.type == null">N/A</p>
+      </li>
+      <li class="card__detail">
+        <h5>Family:</h5>
+        <p>{{cardDetails.data.family}}</p>
+        <p *ngIf="cardDetails.data.family == null">N/A</p>
+      </li>
+      <li class="card__detail">
+        <h5>atk:</h5>
+        <p>{{cardDetails.data.atk}}</p>
+        <p *ngIf="cardDetails.data.atk == null">N/A</p>
+      </li>
+      <li class="card__detail">
+        <h5>def:</h5>
+        <p>{{cardDetails.data.def}}</p>
+        <p *ngIf="cardDetails.data.def == null">N/A</p>
+      </li>
+      <li class="card__detail">
+        <h5>Level:</h5>
+        <p>{{cardDetails.data.level}}</p>
+        <p *ngIf="cardDetails.data.level == null">N/A</p>
+      </li>
+      <li class="card__detail">
+        <h5>Property:</h5>
+        <p>{{cardDetails.data.property}}</p>
+        <p *ngIf="cardDetails.data.property == null">N/A</p>
+      </li>
+    </ul>
+
+    <div class="card__description">
+      <h5>Description</h5>
+      <p>
+        {{cardDetails.data.text}}
+      </p>
+      <p *ngIf="cardDetails.data.text == null">N/A</p>
+    </div>
+
+  </div>
+</div>

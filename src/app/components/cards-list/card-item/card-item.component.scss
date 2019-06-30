@@ -78,3 +78,16 @@
     }
   }
 }
+
+.spinner-container {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  justify-content: center;
+  z-index: 100;
+}
+
+.infotext {
+  font-size: 2rem;
+  color: #20a286;
+  margin: 2rem 2rem;
+}

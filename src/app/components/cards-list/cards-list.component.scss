@@ -16,6 +16,7 @@
   &__cards-list {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+    height: calc(100vh - 7rem);
   }
 
   &__card-details {
@@ -64,4 +65,11 @@
 .active {
   background: #32465a;
   border-right: 5px solid #20a286;
+}
+
+
+.infotext {
+  font-size: 2rem;
+  color: #20a286;
+  margin: 2rem 2rem;
 }

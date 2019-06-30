@@ -9,7 +9,7 @@ import { GetCardDetailsService } from 'src/app/shared/get-card-details.service';
 })
 export class CardItemComponent implements OnInit {
 
-  selectedCardName: string;
+  selectedCardName: string = null;
   cardDetails: any;
   dataReady: boolean = false;
   loadingData: boolean = false;
@@ -17,8 +17,10 @@ export class CardItemComponent implements OnInit {
   constructor(private getCardDetailsService: GetCardDetailsService) { }
 
   ngOnInit() {
+
     this.getCardDetailsService.cardSelectionEmitter.subscribe(
        cardName => {
+
         this.selectedCardName = cardName;
         this.loadCardDetails();
       }  
@@ -26,6 +28,7 @@ export class CardItemComponent implements OnInit {
   }
 
   loadCardDetails() {
+    this.dataReady = false;
     this.loadingData = true;
     this.getCardDetailsService.loadCardDetails(this.selectedCardName).subscribe(
       data => {

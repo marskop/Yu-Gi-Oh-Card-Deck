@@ -1,4 +1,4 @@
-<div *ngIf="loadingData" class="spinner-container">
+<div *ngIf="loadingData && selectedCardName != null" class="spinner-container">
   <div class="spinner">
     <div></div>
     <div></div>
@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div *ngIf="dataReady" class="card">
+<div *ngIf="dataReady && selectedCardName != null" class="card">
 
   <div class="card__img">
     <img [src]="'http://yugiohprices.com/api/card_image/' + cardDetails.data.name">
@@ -65,4 +65,8 @@
     </div>
 
   </div>
+</div>
+
+<div *ngIf="selectedCardName == null">
+  <p class="infotext">Please select a card</p>
 </div>
